@@ -35,6 +35,9 @@ NUMBER_OF_RESTAURANTS.times do
   DISHES_PER_RESTAURANT.times do
     dish = restaurant.dishes.create(name: Faker::Food.unique.dish)
 
+    downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{dish.name}"))
+    dish.image.attach(io: downloaded_image, filename: "image-#{dish.name}.jpg")
+
     ingredients = sample_model(Ingredient, INGREDIENTS_PER_DISH)
 
     ingredients.each do |ingredient|
