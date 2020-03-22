@@ -3,25 +3,14 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: %i[show edit update destroy]
 
-  # GET /restaurants
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
   end
 
-  # GET /restaurants/1
   # GET /restaurants/1.json
   def show; end
 
-  # GET /restaurants/new
-  def new
-    @restaurant = Restaurant.new
-  end
-
-  # GET /restaurants/1/edit
-  def edit; end
-
-  # POST /restaurants
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
@@ -33,7 +22,6 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
   def update
     if @restaurant.update(restaurant_params)
@@ -43,10 +31,10 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  # DELETE /restaurants/1
   # DELETE /restaurants/1.json
   def destroy
     @restaurant.destroy
+
     head :no_content
   end
 
