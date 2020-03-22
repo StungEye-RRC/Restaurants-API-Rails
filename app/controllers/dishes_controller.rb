@@ -5,7 +5,9 @@ class DishesController < ApplicationController
 
   # GET /dishes.json
   def index
-    @dishes = Dish.all
+    @dishes = Dish.includes(:restaurant,
+                            measured_ingredients: %i[ingredient measurement])
+                  .with_attached_image
   end
 
   # GET /dishes/1.json
