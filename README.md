@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To clone this repo:
 
-Things you may want to cover:
+git clone https://github.com/StungEye-RRC/Restaurants-API-Rails.git
 
-* Ruby version
+cd Restaurants-API-Rails
 
-* System dependencies
+bundle install
 
-* Configuration
+yarn install
 
-* Database creation
+rails db:migrate
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rails db:seed
